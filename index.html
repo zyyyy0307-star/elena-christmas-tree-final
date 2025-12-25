@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elena 2025 Christmas Tree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+      /* --- DESIGN SYSTEM: DARK, GOLD & GLOWING --- */
+      
+      :root {
+        --color-bg: #030303;
+        --color-gold-light: #FFF5C2;
+        --color-gold-primary: #D4AF37;
+        --color-gold-dark: #8A6C1E;
+        
+        --font-display: 'Cinzel', serif;
+        --font-body: 'Inter', sans-serif;
+        
+        --glass-bg: rgba(15, 15, 15, 0.7);
+        --glass-border: rgba(212, 175, 55, 0.15);
+        --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+      }
+
+      body { 
+        margin: 0; 
+        overflow: hidden; 
+        background-color: var(--color-bg); 
+        color: #e0e0e0; 
+        font-family: var(--font-body); 
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      canvas { touch-action: none; }
+
+      /* --- TYPOGRAPHY --- */
+      
+      .title-display {
+        font-family: var(--font-display);
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold-primary) 50%, var(--color-gold-dark) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+      }
+
+      .subtitle {
+        font-family: var(--font-body);
+        font-weight: 300; /* Elegant weight */
+        letter-spacing: 2px; /* Specific 2px spacing */
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7); /* Soft white */
+        font-size: 0.75rem;
+      }
+
+      /* --- COMPONENTS --- */
+
+      .glass-panel {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+      }
+
+      .status-indicator {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.5s ease;
+      }
+
+      .status-indicator.active {
+        border-color: rgba(212, 175, 55, 0.3);
+        background: rgba(212, 175, 55, 0.05);
+      }
+
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #555;
+        transition: all 0.3s ease;
+      }
+
+      .status-dot.active {
+        background-color: var(--color-gold-primary);
+        box-shadow: 0 0 10px var(--color-gold-primary);
+      }
+
+      .status-text {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .status-text.active {
+        color: var(--color-gold-light);
+      }
+
+      /* --- OVERLAY LAYOUT --- */
+      
+      .ui-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2.5rem;
+      }
+
+      /* --- ANIMATIONS --- */
+      
+      @keyframes soft-pulse {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 0.4; }
+      }
+      
+      .animate-pulse-slow {
+        animation: soft-pulse 4s infinite ease-in-out;
+      }
+
+      /* --- GRAND FINALE --- */
+      .golden-glow {
+        font-family: var(--font-display);
+        color: #D4AF37; /* Fallback */
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFA500;
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.4.2",
+    "three": "https://esm.sh/three@^0.182.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.7.7",
+    "@mediapipe/tasks-vision": "https://esm.sh/@mediapipe/tasks-vision@^0.10.22-rc.20250304",
+    "@react-three/postprocessing": "https://esm.sh/@react-three/postprocessing@^3.0.4",
+    "zustand": "https://esm.sh/zustand@^5.0.9",
+    "gsap": "https://esm.sh/gsap@^3.14.2"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
